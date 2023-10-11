@@ -39,7 +39,7 @@ Twilio framework for sending messages.
 
 for more info visit: (https://fetch.ai/docs/guides/agents/installing-uagent)
 
-**Configuration:**
+## Configuration
 
 - Set up a Twilio account and obtain the following credentials:
   - Twilio Account SID
@@ -67,7 +67,7 @@ for more info visit: (https://fetch.ai/docs/guides/agents/installing-uagent)
   ```
 
 
-**Running the Application:**
+## Running the Application
 
 - Execute the following command to start the Flask application:
 
@@ -79,7 +79,7 @@ Create a virtual environment.
 
 - Access the application by opening a web browser and navigating to `http://localhost:5000`.
 
-5. **Monitoring Exchange Rates:**
+## Monitoring Exchange Rates
 
 - Input your base currency, target currency, select the threshold amount with the limit - upper/lower.
 - You will receive SMS alerts via Twilio when exchange rates cross the specified thresholds.
