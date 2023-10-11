@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<form action="/submit" method="POST">
+
+    <head>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Inter', sans-serif;
+                background: linear-gradient(to bottom, #07074d, #ffffff);
+                /* Background gradient from royal blue to white */
+            }
+
+            .formbold-main-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 48px;
+            }
+
+            .formbold-form-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                background: white;
+                padding: 40px;
+                border-radius: 10px;
+                /* Rounded rectangular box */
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+                /* Add a subtle shadow for depth */
+            }
+
+            .formbold-img {
+                margin-bottom: 20px;
+                /* Add some spacing between the image and the title */
+            }
+
+            .title {
+                text-align: center;
+                /* Center align the title */
+                color: #6a64f1;
+                /* Set an impressive color (you can change this color code) */
+                font-weight: bold;
+                /* Make the title bold */
+                font-size: 28px;
+                line-height: 34px;
+            }
+
+            .highlighted-text {
+                color: #6a64f1;
+                /* Highlighted text color */
+                font-weight: 600;
+                /* Make the highlighted text bold */
+            }
+
+           
+            .formbold-mb-3 {
+                margin-bottom: 15px;
+            }
+
+            .formbold-relative {
+                position: relative;
+            }
+
+            .formbold-opacity-0 {
+                opacity: 0;
+            }
+
+            .formbold-stroke-current {
+                stroke: currentColor;
+            }
+
+            #supportCheckbox:checked~div span {
+                opacity: 1;
+            }
+
+            .formbold-input-flex {
+                display: flex;
+                gap: 20px;
+                margin-bottom: 15px;
+            }
+
+            .formbold-input-flex>div {
+                width: 50%;
+            }
+
+            .formbold-form-input {
+                text-align: center;
+                width: 100%;
+                padding: 13px 22px;
+                border-radius: 5px;
+                border: 1px solid #dde3ec;
+                background: #ffffff;
+                font-weight: 500;
+                font-size: 16px;
+                color: #536387;
+                outline: none;
+                resize: none;
+                color: #536387;
+                line-height: 24px;
+                margin-bottom: 10px;
+            }
+
+            .formbold-form-input:focus {
+                border-color: #6a64f1;
+                box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+            }
+
+            .formbold-form-label {
+                color: #536387;
+                font-size: 14px;
+                line-height: 24px;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .formbold-form-select {
+                width: 100%;
+                padding: 12px 22px;
+                border-radius: 5px;
+                border: 1px solid #dde3ec;
+                background: #ffffff;
+                font-size: 16px;
+                color: #536387;
+                outline: none;
+                resize: none;
+            }
+
+            .formbold-btn {
+                font-size: 16px;
+                border-radius: 5px;
+                padding: 14px 25px;
+                border: none;
+                font-weight: 500;
+                background-color: #6a64f1;
+                color: white;
+                cursor: pointer;
+                margin-top: 25px;
+            }
+
+            .formbold-btn:hover {
+                box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="formbold-main-wrapper">
+            <div class="formbold-form-wrapper">
+                <img src="https://img.freepik.com/premium-vector/salary-euro-rate-increase-statistic-business-profit-growth-margin-revenue-finance-performance-return-investment-roi-concept-with-arrow-icon-coin-flat-vector-illustration-isolated-white_599742-255.jpg"
+                    class="formbold-img" />
+
+                <h2 class="title">Currency Whisper</h2>
+
+                <p>
+                    The <span class="highlighted-text">Currency Whisper</span> rate notifications bring you live
+                    information so you can keep track of the REAL exchange rate.
+                </p>
+
+                <div class="formbold-input-flex">
+                    <div>
+                        <label for="Base Currency" class="formbold-form-label">
+                            Base Currency
+                        </label>
+                        <input type="text" name="basecurrency" id="basecurrency" class="formbold-form-input" />
+                    </div>
+                    <div>
+                        <label for="Target Currency" class="formbold-form-label">Target Currency</label>
+                        <input type="text" name="targetcurrency" id="targetcurrency" class="formbold-form-input" />
+                    </div>
+                </div>
+
+                <div>
+                    <label for="phone" class="formbold-form-label">Phone number with +countrycode</label>
+                    <input type="text" name="phone" id="phone" class="formbold-form-input" />
+                </div>
+
+                <div class="formbold-mb-3">
+                    <label for="amount" class="formbold-form-label">Threshold Amount</label>
+                    <input type="text" name="amount" id="amount" class="formbold-form-input" />
+                </div>
+
+                <div class="formbold-input-group">
+                    <label class="formbold-form-label">Set the threshold limit</label>
+                    <select class="formbold-form-select" name="limit" id="limit">
+                        <option value="Upper">Upper Bound</option>
+                        <option value="lower">Lower Bound</option>
+                    </select>
+                </div>
+                <button class="formbold-btn">Get Alerts</button>
+            </div>
+
+
+            <div class="agent-status">
+                <p>{{ agent_status }}</p>
+            </div>
+
+        </div>
+    </body>
+</form>
+
+</html>
