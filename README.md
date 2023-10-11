@@ -7,7 +7,8 @@ The Currency Exchange Monitor & Alert Agent is a Python application developed us
 It is powered by the uAgent library, enabling a seamless and automated monitoring process. 
 This application empowers users to stay informed about currency fluctuations.
 
-##Features
+## Features
+
 1.Real-time Exchange Rate Monitoring: Stay updated with accurate and real-time exchange rate data, providing you with the most current information for your selected currency pairs.
 
 2.Multi-Currency Support: Choose your base currency and one or more foreign currencies to monitor. This feature allows you to track multiple currency pairs simultaneously.
